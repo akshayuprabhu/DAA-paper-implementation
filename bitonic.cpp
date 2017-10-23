@@ -3,16 +3,13 @@
 using namespace std;
 
 
-void compAndSwap(int a[], int i, int j, int dir)
-{
+void compAndSwap(int a[], int i, int j, int dir){
     if (dir==(a[i]>a[j]))
         swap(a[i],a[j]);
 }
 
-void bitonicMerge(int a[], int low, int cnt, int dir)
-{
-    if (cnt>1)
-    {
+void bitonicMerge(int a[], int low, int cnt, int dir){
+    if (cnt>1){
         int k = cnt/2;
         for (int i=low; i<low+k; i++)
             compAndSwap(a, i, i+k, dir);
@@ -36,8 +33,7 @@ void bitonicSort(int a[],int low, int cnt, int dir)
     }
 }
 
-void sort(int a[], int N, int up)
-{
+void sort(int a[], int N, int up){
     bitonicSort(a,0, N, up);
 }
 
